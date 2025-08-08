@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- Иконка сайта -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Моя визитка</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif; /* тип текста (Arial)*/
+      background: linear-gradient(135deg, #1f1c2c, #5c5c61); /* градиентный фон */
+      color: white;
+      height: 100vh;/* размер ( на вест экран)*/
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+    }
+
+    h1 {
+      font-size: 3em; /* размер заголовка */
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 13px; /*дистанция между кнопками */
+      color: white; /*цвет текста в кнопке */
+      text-decoration: none;;/*линия. над текстом под текстом в тексте и т.д  */
+      padding: 8px 19px; /*высота и ширина граней  */
+      border: 2px solid white; /* толщина граней */
+      border-radius: 9px; /* округление граней кнопки */
+      transition: 0.4s; /* плавная анимация наведения на кропку ссылки на соц сети */
+    }
+
+    .social-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* эффект при наведении */
+    }
+
+    /* ===== Боковое Меню ===== */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -280px; /* изначально скрыто */
+      width: 300px;
+      height: 100%;
+      background-color: #3f3f42;
+      padding: 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      z-index: 1000;
+      filter: drop-shadow();
+    }
+
+    /* показываем меню при наведении */
+    .sidebar:hover,
+    .sidebar.active {
+      right: 0;
+    }
+
+    /* зона активации по краю экрана */
+    .hover-zone {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 20px; /* узкая зона слева от меню */
+      height: 100%;
+      z-index: 999;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: #ffdfdf;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: #ddd;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .sidebar a:hover {
+      color: #fff; /* эффект при наведении */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Привет, я Илья!</h1>
+  <p>Добро пожаловать на мой сайт-визитку</p>
+
+  <div class="social-links">
+    <a href="https://t.me/Feilics" target="blank">Telegram</a>
+    <a href="https://github.com/Feilic" target="_blank">GitHub</a>
+    <a href="https://www.instagram.com/feilics?igsh=MXg0YTgydDl1NWFpMg==" target="_blank">Instagram</a>
+    <a href ="https://www.tiktok.com/@oxiggenni4?_t=ZG-8yPRW5GHTgf&_r=1" target="_blank">Tik Tok</a>
+    <a href ="https://steamcommunity.com/profiles/76561199224934314/" target="_blank">Steam</a>
+  </div>
+
+  <!-- Невидимая область у края экрана для активации меню -->
+  <div class="hover-zone" onmouseover="openSidebar()" onmouseout="closeSidebar()"></div>
+
+  <!-- Меню сбоку -->
+  <div class="sidebar" id="sidebar" onmouseover="openSidebar()" onmouseout="closeSidebar()">
+    <h2>Мои проекты</h2>
+    <a href="file:///D:/сайт/site1.html" target="_blank">1⃣ Тема сайта</a>
+    <a href="file:///D:/сайт/site2.html" target="_blank">2⃣ Тут пусто</a>
+    <a href="file:///D:/сайт/site3.html" target="_blank">3⃣ Тут пусто</a>
+  </div>
+
+  <script>
+    // Показываем меню при наведении
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("active");
+    }
+
+    // Прячем меню, если мышка уходит
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
