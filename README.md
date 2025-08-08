@@ -1,4 +1,4 @@
 ## Hi there 👋
  My name Ilia 
 I em statrting to study programing.
-This is my projeckt site business card
+This is my project site business card
